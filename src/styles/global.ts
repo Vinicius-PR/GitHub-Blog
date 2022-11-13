@@ -17,11 +17,28 @@ export const GlobalStyle = createGlobalStyle`
   background-color: ${(props) => props.theme['base-background']};
   }
 
-  p {
+  p, li, code {
     color: ${(props) => props.theme['base-text']};
+  }
+
+  li {
+    margin-left: 2rem;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: ${(props) => props.theme['base-title']};
   }
 
   svg {
     color: white;
+  }
+
+  a {
+      border-bottom: 1px solid transparent;
+    &:hover {
+
+      border-color: ${(props) => props.theme.blue};
+    }
+    
   }
 `

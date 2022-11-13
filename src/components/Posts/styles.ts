@@ -14,3 +14,9 @@ export const PostsContainer = styled.section`
     grid-template-columns: 1fr;
   }
 `
+
+export const NoPosts = styled.h1`
+  text-align: center;
+  margin-top: 3rem;
+  color: ${(props) => props.theme['base-title']};
+`

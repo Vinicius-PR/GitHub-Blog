@@ -30,5 +30,9 @@ export const FormContainer = styled.section`
     &::placeholder {
       color: ${(props) => props.theme['base-label']};
     }
+
+    &:focus {
+      border-color: ${(props) => props.theme.blue};
+    }
   }
 `

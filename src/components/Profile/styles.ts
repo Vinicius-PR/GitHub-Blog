@@ -28,7 +28,7 @@ export const ProfileContent = styled.div`
   margin-left: 2rem;
   display: flex;
   flex-direction: column;
-
+  flex: 1;
   @media (max-width: 700px) {
     margin-left: 0;
   }
@@ -37,6 +37,7 @@ export const ProfileContent = styled.div`
 export const ProfileTitle = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   h1 {
     color: ${(props) => props.theme['base-title']};

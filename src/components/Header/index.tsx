@@ -7,9 +7,7 @@ export function Header() {
   return (
     <HeaderContainer backgroundImgUrl={backgroundImg}>
       <NavLink to="/" end>
-        {/* <a href="#"> */}
         <img src={logoImg} alt="" />
-        {/* </a> */}
       </NavLink>
     </HeaderContainer>
   )

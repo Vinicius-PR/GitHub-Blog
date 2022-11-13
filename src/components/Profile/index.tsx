@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import {
   ImageContainer,
   ProfileContainer,
@@ -6,8 +7,6 @@ import {
   ProfileText,
   ProfileTitle,
 } from './styles'
-import AvatarImg from '../../assets/avatar.png'
-// import viniciusImg from '../../assets/vinicius.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faBuilding,
@@ -15,42 +14,75 @@ import {
   faCode,
   faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons'
+import { api } from '../../lib/axios'
+import { useEffect, useState } from 'react'
+
+interface ProfileData {
+  login: string
+  name: string
+  bio: string
+  avatarUrl: string
+  htmlUrl: string
+  company: string
+  followers: string
+}
+
 export function Profile() {
+  const [profileData, setProfileData] = useState<ProfileData>()
+
+  async function fetchProfileData() {
+    const response = await api.get('/users/Vinicius-PR')
+    const { login, name, bio, avatar_url, html_url, company, followers } =
+      response.data
+
+    const profile = {
+      login,
+      name,
+      bio,
+      avatarUrl: avatar_url,
+      htmlUrl: html_url,
+      company,
+      followers,
+    }
+
+    setProfileData(profile)
+  }
+
+  useEffect(() => {
+    fetchProfileData()
+  }, [])
+
   return (
     <ProfileContainer>
       <ImageContainer>
-        <img src={AvatarImg} alt="" />
+        <img src={profileData?.avatarUrl} alt="" />
       </ImageContainer>
 
       <ProfileContent>
         <ProfileTitle>
-          <h1>Camerom Wiliamson</h1>
-          <a href="" target="_blank">
+          <h1>{profileData?.name}</h1>
+          <a href={profileData?.htmlUrl} target="_blank" rel="noreferrer">
             GITHUB
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
           </a>
         </ProfileTitle>
 
-        <ProfileText>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </ProfileText>
+        <ProfileText>{profileData?.bio}</ProfileText>
 
         <ProfileInfo>
           <div>
             <FontAwesomeIcon icon={faCode} />
-            <p>cameronwll</p>
+            <p>{profileData?.login}</p>
           </div>
 
           <div>
             <FontAwesomeIcon icon={faBuilding} />
-            <p>RocketSeat</p>
+            <p>{profileData?.company}</p>
           </div>
 
           <div>
             <FontAwesomeIcon icon={faUserGroup} />
-            <p>32 Seguidores</p>
+            <p>{profileData?.followers} Seguidores</p>
           </div>
         </ProfileInfo>
       </ProfileContent>

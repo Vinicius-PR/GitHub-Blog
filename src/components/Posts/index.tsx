@@ -1,13 +1,23 @@
-import { Post } from '../Post'
-import { PostsContainer } from './styles'
+import { PostProps } from '../../pages/Home'
+import { PostCard } from '../PostCard'
+import { NoPosts, PostsContainer } from './styles'
 
-export function Posts() {
+interface PostsProps {
+  allPosts: PostProps[]
+}
+
+export function Posts({ allPosts }: PostsProps) {
   return (
-    <PostsContainer>
-      <Post />
-      <Post />
-      <Post />
-      <Post />
-    </PostsContainer>
+    <>
+      {allPosts.length > 0 ? (
+        <PostsContainer>
+          {allPosts.map((post) => {
+            return <PostCard key={post.number} post={post} />
+          })}
+        </PostsContainer>
+      ) : (
+        <NoPosts>Nenhum post encontrado</NoPosts>
+      )}
+    </>
   )
 }
