@@ -71,4 +71,9 @@ Open the folder using your IDE. Then, go to the terminal of your IDE and type th
 Type the next command to see the result and click on the link that will appear on the terminal:
  > npm run dev
 
-**Note:** If you want to use your repository, you have to change the request address at **indes.tsx** that are in the Home and Post folder.
+#### Note:
+If you want to use your repository, you have to change the request address of the Git API at:
+
+* index.tsx file in **src/components/Profile**
+* index.tsx file in **src/pages/Home**
+* index.tsx file in **src/pages/PostPage**
