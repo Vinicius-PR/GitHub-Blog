@@ -61,7 +61,7 @@ If you don't have an IDE, install one of you preference. In my case, I used Visu
 You clone the project. Use the commande line on your folder:
  > git clone https://github.com/Vinicius-PR/Challenge-03-Ignite-2022-GitHub-Blog.git
  
- ### Forth
+ ### Fourth
  
 Open the folder using your IDE. Then, go to the terminal of your IDE and type the following command to install the dependencies: (or can go to the folder application using normal terminal and type the same command)
  > npm install
