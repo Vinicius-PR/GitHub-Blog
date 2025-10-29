@@ -27,19 +27,19 @@ The application is small but I had to remember important concepts:
 ## Pages
 ### Home Page
 
-![Home Page](screenshots/homePage.png)
+![Home Page](screenshots/homePage.jpg)
 
 The Home Page is where all posts are listed.
 
 ### Post Page
 
-![Post Page](screenshots/postPage.png)
+![Post Page](screenshots/postPage.jpg)
 
 This page shows the entire post.
 
 ## Mobile version
 
-![Mobile version](screenshots/mobileVersion.png)
+![Mobile version](screenshots/mobileVersion.jpg)
 
 This application has a mobile version. It is 100% responsive.
 
