@@ -1,4 +1,4 @@
-# Challenge 03 - Ignite 2022 - React JS - GitHub Blog
+# GitHub Blog
 
 This challenge is a blog, using the issue of a repository as a post of the blog. The app consume GitHub API to get the data.
 
